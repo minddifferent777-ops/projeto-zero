@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha IA Mobile</title>
+    <style>
+        body { font-family: sans-serif; background: #121212; color: white; padding: 20px; }
+        #chat { height: 300px; border: 1px solid #333; overflow-y: auto; margin-bottom: 10px; padding: 10px; }
+        input { width: 70%; padding: 10px; border-radius: 5px; border: none; }
+        button { width: 25%; padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h2>Assistente IA 🤖</h2>
+    <div id="chat"></div>
+    <input type="text" id="userInput" placeholder="Pergunte algo...">
+    <button onclick="sendMessage()">Enviar</button>
+
+    <script>
+        async function sendMessage() {
+            const input = document.getElementById('userInput');
+            const chat = document.getElementById('chat');
+            if(!input.value) return;
+
+            chat.innerHTML += `<p><b>Você:</b> ${input.value}</p>`;
+            // Aqui conectaremos a lógica da IA no próximo passo
+            chat.innerHTML += `<p><i>IA processando...</i></p>`;
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
